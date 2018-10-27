@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>链2345区块链资讯导航</title>
+  <link rel="stylesheet" href="./static/font_zpim850dsvf/iconfont.css">
+  <!-- <script src="./src/assets/js/rem.js"></script> -->
+</head>
+<style>
+  html,
+  body {
+    /* min-width: 320px;
+    max-width: 768px; */
+    margin: 0;
+    padding: 0;
+    /* font-family: arial; */
+  }
+
+
+</style>
+
+<body>
+  <div id="app">
+  </div>
+</body>
+
+<script>
+  (function (doc, win) {
+    var docEl = doc.documentElement,
+      resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+      recalc = function () {
+        var clientWidth = docEl.clientWidth;
+        if (!clientWidth) return;
+        if (clientWidth >= 640) {
+          docEl.style.fontSize = '40px';
+        } else {
+          docEl.style.fontSize = 30 * (clientWidth / 750) + 'px';
+          var div = document.createElement('div');
+          div.style.width = '1.4rem';
+          div.style.height = '0';
+          document.body.appendChild(div);
+          var ideal = 106 * clientWidth / 750;
+          var rmd = (div.clientWidth / ideal);
+          if (rmd > 1.2 || rmd < 0.8) {
+            docEl.style.fontSize = 30 * (clientWidth / 750) / rmd + 'px';
+          }
+          document.body.removeChild(div);
+        };
+      };
+    if (!doc.addEventListener) return;
+    win.addEventListener(resizeEvt, recalc, false);
+    doc.addEventListener('DOMContentLoaded', recalc, false);
+  })(document, window);
+
+</script>
+
+</html>
